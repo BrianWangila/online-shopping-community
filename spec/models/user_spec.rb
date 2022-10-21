@@ -8,7 +8,7 @@ RSpec.describe User, type: :model do
   end
 
   describe "validations" do
-    it { is_expected_to validate_presence_of(:user_name) }
-    # it { is_expected_to validate_uniqueness_of(:username) }
+    it { is_expected.to validate_presence_of(:user_name) }
+    it { is_expected.to validate_uniqueness_of(:user_name) }
   end
 end
