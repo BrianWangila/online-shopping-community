@@ -45,6 +45,9 @@ group :development, :test do
 
   #rspec
   gem 'rspec-rails', '~> 6.0', '>= 6.0.1'
+
+  #should-matchers
+  gem 'shoulda-matchers', '~> 5.2'
 end
 
 group :development do
