@@ -92,3 +92,8 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+require 'rspec-benchmark'
+
+RSpec.configure do |config|
+  config.include RSpec::Benchmark::Matchers
+end
