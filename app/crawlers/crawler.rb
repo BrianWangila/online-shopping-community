@@ -2,7 +2,7 @@
 
 require 'uri'
 require 'openssl'
-require 'awesome_print'
+# require 'awesome_print'
 require 'nokogiri'
 require 'net/http'
 
