@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def profile
-    render json: { user: UserSerializer.new(current_user) }, status: :accepted
+    render json: { user: UserSerializer.new(current_user)}, status: :accepted
   end
 
   private

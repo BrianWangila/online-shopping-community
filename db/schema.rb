@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,52 +10,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_221_031_112_101) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_03_053830) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'products', force: :cascade do |t|
-    t.string 'name'
-    t.string 'price'
-    t.string 'price_before_discount'
-    t.string 'discount'
-    t.string 'shop'
-    t.string 'image_url'
-    t.string 'ratings'
-    t.string 'return_policy'
-    t.string 'shipping'
-    t.string 'coupon_discount'
-    t.datetime 'expire_at'
-    t.integer 'search_id'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.integer 'price_index', default: 1
-    t.integer 'rated_products', default: 0
-    t.integer 'products_sold', default: 0
-    t.string 'product_url'
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.string "price"
+    t.string "price_before_discount"
+    t.string "discount"
+    t.string "shop"
+    t.string "image_url"
+    t.string "ratings", default: "0"
+    t.string "return_policy"
+    t.string "shipping"
+    t.string "coupon_discount"
+    t.datetime "expire_at"
+    t.integer "search_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "price_index", default: 1
+    t.integer "rated_products", default: 0
+    t.integer "products_sold", default: 0
+    t.string "product_url"
+    t.integer "price_normal"
   end
 
-  create_table 'searches', force: :cascade do |t|
-    t.string 'search_term'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.integer 'count', default: 1
+  create_table "searches", force: :cascade do |t|
+    t.string "search_term"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "count", default: 1
   end
 
-  create_table 'user_searches', force: :cascade do |t|
-    t.integer 'user_id'
-    t.integer 'search_id'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "user_searches", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "search_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table 'users', force: :cascade do |t|
-    t.string 'name'
-    t.string 'username'
-    t.string 'email'
-    t.string 'location'
-    t.string 'password_digest'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "username"
+    t.string "email"
+    t.string "location"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
+
 end

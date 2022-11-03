@@ -2,7 +2,6 @@
 
 require 'uri'
 require 'openssl'
-# require 'awesome_print'
 require 'nokogiri'
 require 'net/http'
 
@@ -10,24 +9,21 @@ class Crawler
   include CrawlerHelper
 
   def initialize(search, search_id)
-    key = '9lSwt8nLosyS3gbo5mUswDFEXIjLGAgf'
+    # key = '9lSwt8nLosyS3gbo5mUswDFEXIjLGAgf'
+    key="tXd37busEtTlWXfseoQVmWzqDu38nW1k"
 
     @url_jumia = URI("https://api.webscrapingapi.com/v1?url=https%3a%2f%2fwww.jumia.co.ke%2fcatalog%2f%3fq%3d#{search}&api_key=#{key}&render_js=1&wait_until=networkidle2")
     @url_amazon = URI("https://api.webscrapingapi.com/v1?url=https%3a%2f%2fwww.amazon.com%2fs%3fk%3d#{search}&api_key=#{key}&render_js=1&wait_until=domcontentloaded")
     @url_ebay = URI("https://api.webscrapingapi.com/v1?url=https%3a%2f%2fwww.ebay.com%2fsch%2fi.html%3f_from%3dR40%26_trksid%3dp2380057.m570.l1313%26_nkw%3d#{search}&api_key=#{key}")
 
     @search_id = search_id
-    # @pages = {
-    #   jumia: response(url_jumia),
-    #   ebay: response(url_ebay),
-    #   amazon: response(url_amazon)
-    # }
+    @search=search
   end
 
   def response(url)
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
-    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    http.verify_mode = OpenSSL::SSL::VERIFY_PEER
 
     request = Net::HTTP::Get.new(url)
 
@@ -54,9 +50,10 @@ class Crawler
         shop: 'jumia',
         price_index: calculate_price_index(float_price(price), index),
         search_id: @search_id,
-        product_url: @url_jumia
+        product_url: "https://www.jumia.co.ke/catalog/?q=#{@search}",
+        price_normal: float_price(price)
       }
-    end.slice(0, 6)
+    end.slice(0, 8)
     create_products(raw)
   end
 
@@ -78,9 +75,10 @@ class Crawler
         shop: 'ebay',
         price_index: calculate_price_index(dollar_price(price), index),
         search_id: @search_id,
-        product_url: @url_ebay
+        product_url: "https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313&_nkw=#{@search}",
+        price_normal: dollar_price(price)
       }
-    end.slice(1, 7)
+    end.slice(1, 9)
     create_products(raw)
   end
 
@@ -99,9 +97,10 @@ class Crawler
         shop: 'amazon',
         price_index: calculate_price_index(dollar_price(price), index),
         search_id: @search_id,
-        product_url: @url_amazon
+        product_url:"https://www.amazon.com/s?k=#{@search}",
+        price_normal: dollar_price(price)
       }
-    end.slice(0, 6)
+    end.slice(0, 8)
     create_products(raw)
   end
 

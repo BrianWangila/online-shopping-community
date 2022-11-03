@@ -5,8 +5,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :products
-  resources :users
+ 
 
   post '/search', to: 'searches#create'
 
@@ -20,4 +19,8 @@ Rails.application.routes.draw do
 
   get 'trends/:search_id', to: 'products#trending'
   get 'toptrends', to: 'products#toptrends'
+
+  get 'history', to: 'searches#history'
+  
+  root "welcome#index"
 end

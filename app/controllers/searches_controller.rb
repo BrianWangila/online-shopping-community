@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class SearchesController < ApplicationController
-  before_action :authorize, only: [:index]
+  before_action :authorize, only: [:index,:history]
 
   def create
     term = params[:search_term].downcase
@@ -21,11 +21,16 @@ class SearchesController < ApplicationController
     render json: search.products, status: :ok
   end
 
-  def trends
-    render json: Search.all.order_by_count.limit(12)
+  def history
+    render json: current_user.searches.uniq(&:search_term).slice(0,10), status: :ok
   end
 
-  def index
-    render json: current_user.searches.uniq
+
+  def trends
+    render json: Search.all.order_by_count.limit(12).uniq(&:search_term)
   end
+
+  # def index
+  #   render json: current_user.searches.uniq.pluck(:search_term)
+  # end
 end

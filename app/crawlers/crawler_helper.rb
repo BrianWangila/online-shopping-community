@@ -12,7 +12,12 @@ module CrawlerHelper
   end
 
   def float_price(price)
-    price.scan(/[0-9.]+/).first.to_f
+    p=price.scan(/[0-9.,]+/).first
+    if p
+      p.gsub(/[,]/,"").to_f
+    else
+      0
+    end
   end
 
   def dollar_price(price)
@@ -20,6 +25,6 @@ module CrawlerHelper
   end
 
   def calculate_price_index(price, index)
-    (10 * index) + price / 10
+    (2 * index) + price / 10
   end
 end
