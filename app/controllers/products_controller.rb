@@ -8,9 +8,14 @@ class ProductsController < ApplicationController
   end
 
   def trending
-    search = Search.find_by(id: params[:search_id])
+    @search = Search.find_by(id: params[:search_id])
 
-    render json: search.products
+    render json: @search.products
+  end
+
+  def single
+    product = @search.find_by(id: params[:id])
+    render json: product
   end
 
   def toptrends

@@ -19,5 +19,8 @@ Rails.application.routes.draw do
   get 'trends', to: 'searches#trends'
 
   get 'trends/:search_id', to: 'products#trending'
+
+  get 'toptrends/:search_id/:id', to: 'products#single'
+
   get 'toptrends', to: 'products#toptrends'
 end
