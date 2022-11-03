@@ -1,53 +1,132 @@
 # 
-<h1 align="center">Online Shopping Community App</h1>
+<h1 align="center">Murife Online Shopping Community</h1>
 
-<p align="center"><img src="https://socialify.git.ci/Aimkeys-Sir/online-shopping-community/image?font=Raleway&issues=1&language=1&name=1&pattern=Floating%20Cogs&stargazers=1&theme=Light"></p>
 
-This is the backend for the Online Shopping community where our API exists and other key datail components
+This is the backend for the Murife online shopping community app where our API exists. <br/>
+``Murife shopping`` website is used to help customers make the right choice when it comes to purchasing products online. The site gives the user an avenue to search for a product, compare the product's cost and marginal benefits based on prices, ratings, mode of payment etc, and decide which product they want and from which online shop.
 
 <p align="center"><img src="https://img.shields.io/github/issues/Aimkeys-Sir/online-shopping-community" alt="shields"><img src="https://img.shields.io/github/forks/Aimkeys-Sir/online-shopping-community" alt="shields"><img src="https://img.shields.io/github/stars/Aimkeys-Sir/online-shopping-community" alt="shields"><img src="https://img.shields.io/github/license/Aimkeys-Sir/online-shopping-community" alt="shields"></p>
 
-<h2>🚀 Demo</h2>
+<h1>Demo 🚀</h1>
 
-[https:](https:)
+Live [Link for our API](https:)
 
-<h2>Project Screenshots:</h2>
+<h1>This project was contributed to by 🍰: </h1>
 
-<h2>🧐 Features</h2>
+* [Kelvin Mwaura](https://github.com/Aimkeys-Sir)
+* [Brian Wangila](https://github.com/BrianWangila)
+* [Peter Karanja](https://github.com/JAJAKIM22)
+* [Faith Murithi](https://github.com/gatwi)
+* [Kelvin Mwendwa](https://github.com/Kelvinmwendwa)
+* [Okubasu Franklin](https://github.com/Okubasufrank)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-Here're some of the project's best features:
+<h1> Features 🧐</h1>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-*   News about various categories delivered in form of stories
-*   New from over 9 distinct categories
+- Four models - User, UserSearch, Product, and Search
+- Has multiple one-to-many and many-to-many relationships
+- Uses PosgreSQL to handle the db
+- Has API routes in Rails that handle all the CRUD actions for the Active Record models.
 
-<h2>🛠️ Installation Steps:</h2>
+<h1>🛠️ Installation Steps:</h1>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://guides.rubyonrails.org/testing.html) for more information.
-<p> Run the app in the development mode.</p>
+### Website Live Link
+- Click [Here](https://murife-shopping.web.app/) to access Murife webpage
 
-```
-ruby online-shopping-community
-```
+- Access the frontend webpage:
 
-<h2>🍰 Contribution Guidelines:</h2>
+        https://murife-shopping.web.app/
 
-Please contribute using GitHub Flow. Create a branch add commits and open a pull request.
+### API Live Link
+- Click [Here](https://hidden-depths-73217.herokuapp.com/products) to access the live API.
 
-<h2>💻 Built with</h2>
+### Murife Shopping API Repo
+
+- [Murife Repo Link](https://github.com/Aimkeys-Sir/online-shopping-community)
+
+## Getting Started
+In order for you to use the content on this repo, ensure you have the following:
+
+- A computer that runs on either of the following; (Windows 7+, Linux, Mac OS)
+- nodejs 9.0+
+- RVM installed
+- Some bit of patience for your own sanity.
+
+## Installation
+
+To use this repo on your machine requires some simple steps
+
+### Alternative One
+
+- Open a terminal / command line interface on your computer
+- Clone the repo by using the following:
+
+        git@github.com:Aimkeys-Sir/online-shopping-community.git 
+
+- Be patient as it creates a copy on your local machine for you.
+- Change directory to the repo folder:
+
+        cd online-shopping-community
+
+- (Optional) Open it in ``Visual Studio Code``
+
+        code .
+
+- (Alternate Option) Open it in any editor of your choice.
+- Hurray! You are one step closer to being as intelligent as Einstein.
+
+### Alternative Two
+
+- On the top right corner of this page there is a button labelled ``Fork``.
+- Click on that button to fork the repo to your own account.
+- Take on the process in ``Alternative One`` above.
+- Remember to replace your username when cloning.
+
+        git clone (HTTPS) https://github.com/Aimkeys-Sir/online-shopping-community.git
+
+        OR
+
+        git clone (SHH) git@github.com:Aimkeys-Sir/online-shopping-community.git
+
+
+# Running the application
+
+Running the application is very straight forward. You can use the following steps to run the app.
+
+- Install required dependencies from rvm
+
+      bundle install
+
+- Run the application to start the backed server
+
+      bundle exec rails server    
+
+        OR
+
+      bundle exec rails s
+
+        OR
+
+      rails s
+
+<h1>Contribution Guidelines 🍰 :</h1>
+
+Please contribute using GitHub Flow. 
+Create a branch add commits and open a pull request.
+
+<h1>Built with 💻 </h1>
 
 Technologies used in the project:
 
-*   Rails
+* Rails Framework
+* Crawler APIs
+* RSpec for tests
 
-<h2>🛡️ License:</h2>
+<h1>License 🛡️ :</h1>
 
-This project is licensed under the
+The project is licensed under Apache 2.0.
 
-<h2>💖Like our work?</h2>
+The Apache 2.0 [2022] Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+<h1>Like our work? 💖</h1>
 
 Please leave a star if you like the project
